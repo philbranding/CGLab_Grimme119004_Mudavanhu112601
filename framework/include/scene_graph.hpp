@@ -13,12 +13,12 @@ class scene_graph
 
     std::string get_name () const; 
     void setName(std::string name);
-    node get_root () const;
-    void setRoot (node root);
+    Node get_root () const;
+    void setRoot (Node root);
 
     private: 
     std::string name_;
-    node root_; 
+    Node root_; 
 
 
 };
