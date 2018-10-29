@@ -20,8 +20,8 @@ class Node
     std::string getName() const; 
     std::string getPath() const; 
     int getDepth() const; 
-    glm::mat4 getLocalTransform() const; 
-    glm::mat4 getWorldTransform() const; 
+    glm::mat4 getLocalTransform(); 
+    glm::mat4 getWorldTransform(); 
 
 
     //set-methods
@@ -33,12 +33,13 @@ class Node
     Node removeChildren(std::string); 
 
 
- 
+
+    private:
     Node *parent_; 
     std::list<Node> children_; 
     std::string name_; 
     std::string path_; 
-    int depth; 
+    int depth_; 
     glm::mat4 localTransform; 
     glm::mat4 worldTransform; 
 };
