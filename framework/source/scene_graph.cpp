@@ -8,12 +8,12 @@ scene_graph::scene_graph ():
 scene_graph::~scene_graph ()
     {} 
 
-std::string scene_graph::get_name() const
+std::string scene_graph::getName() const
 {
     return name_; 
 }
 
-Node scene_graph::get_root() const
+Node scene_graph::getRoot() const
 {
     return root_;
 }

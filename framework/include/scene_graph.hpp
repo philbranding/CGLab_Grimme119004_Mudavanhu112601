@@ -1,5 +1,6 @@
 #ifndef SCENE_GRAPH_HPP
 #define SCENE_GRAPH_HPP
+
 #include <string>
 #include <iostream>
 #include "node.hpp"
@@ -11,9 +12,10 @@ class scene_graph
 
     ~scene_graph(); 
 
-    std::string get_name () const; 
+    std::string getName () const; 
     void setName(std::string name);
-    Node get_root () const;
+
+    Node getRoot () const;
     void setRoot (Node root);
 
     private: 
@@ -23,4 +25,4 @@ class scene_graph
 
 };
 
-#endif //scene_graph_HPP
+#endif //SCENE_GRAPH_HPP
