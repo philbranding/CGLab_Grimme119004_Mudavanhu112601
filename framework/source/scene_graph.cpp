@@ -30,3 +30,6 @@ void scene_graph::setRoot(Node root)
 
 
  
+//jede Matrix hat lokal (Transformation des Knotens in Hinsicht auf sein Elternelement) 
+//und World (beschreibt die Transformation dieses Knotens in Hinsicht auf das Welt(Root) Koordinatensystem)
+//Welttransformation des Knotens = Welttransformation des Elternelements * Lokaltransformation des Knotens (Folien VR)

@@ -2,6 +2,7 @@
 #define NODE_HPP
 #include <string>
 #include <glm/glm.hpp>
+#include <memory> //std::shared_ptr
 #include <iostream>
 #include <list>
 
@@ -14,8 +15,8 @@ class Node
 
 
     //get-methods
-    Node getParent() const; 
-    Node getChildren(std::string) const; 
+    std::shared_ptr<Node> getParent() const; 
+    std::shared_ptr<Node> getChildren(std::string) const; 
     std::list<Node> getChildrenList() const; 
     std::string getName() const; 
     std::string getPath() const; 
@@ -25,17 +26,18 @@ class Node
 
 
     //set-methods
-    void setParent(Node); 
+    void setParent(std::shared_ptr <Node>); 
     void setLocalTransform(glm::mat4); 
     void setWorldTransform(glm::mat4); 
 
-    void addChildren(Node); 
-    Node removeChildren(std::string); 
+    void addChildren(std::shared_ptr<Node>); 
+    std::shared_ptr<Node> removeChildren(std::string); 
 
 
 
     private:
-    Node *parent_; 
+    std::shared_ptr<Node> parent_; 
+    //Node is a pointer
     std::list<Node> children_; 
     std::string name_; 
     std::string path_; 
